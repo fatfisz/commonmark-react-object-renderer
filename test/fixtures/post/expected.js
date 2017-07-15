@@ -5,7 +5,7 @@ module.exports = {
   children: [
     {
       type: 'h3',
-      children: ['TL;DR'],
+      children: 'TL;DR',
     },
     {
       type: 'p',
@@ -16,14 +16,14 @@ module.exports = {
           props: {
             href: 'https://www.npmjs.com/package/babel-plugin-jsx-svg-inject',
           },
-          children: ['babel-plugin-jsx-svg-inject'],
+          children: 'babel-plugin-jsx-svg-inject',
         },
         ' plugin. Here\'s how it came to be.',
       ],
     },
     {
       type: 'h3',
-      children: ['The beginning'],
+      children: 'The beginning',
     },
     {
       type: 'p',
@@ -34,7 +34,7 @@ module.exports = {
           props: {
             href: 'https://css-tricks.com/icon-fonts-vs-svg/',
           },
-          children: ['icon fonts look pretty bad compared to the SVG icons'],
+          children: 'icon fonts look pretty bad compared to the SVG icons',
         },
         '. As long as you don\'t have to support the very small if not non-existent number of users of ',
         {
@@ -42,14 +42,14 @@ module.exports = {
           props: {
             href: 'http://caniuse.com/#search=svg',
           },
-          children: ['IE < 9 and Android Browser < 3'],
+          children: 'IE < 9 and Android Browser < 3',
         },
         ', you should be safe to use them. If you don\'t want to, that\'s fine - this post is not about convincing you. However, it\'s because of the reasons above that I\'ve started to search for a tool that would enable me to use SVG icons as easily as font icons.',
       ],
     },
     {
       type: 'h3',
-      children: ['The inspiration'],
+      children: 'The inspiration',
     },
     {
       type: 'p',
@@ -60,7 +60,7 @@ module.exports = {
           props: {
             href: 'https://codility.com',
           },
-          children: ['Codility'],
+          children: 'Codility',
         },
         ' that we should switch to SVG icons, I was using the article about ',
         {
@@ -68,7 +68,7 @@ module.exports = {
           props: {
             href: 'https://github.com/blog/2112-delivering-octicons-with-svg',
           },
-          children: ['introducing the SVG icons on GitHub'],
+          children: 'introducing the SVG icons on GitHub',
         },
         '. One thing that inspired me there was the small example of code they provided:',
       ],
@@ -79,11 +79,11 @@ module.exports = {
     },
     {
       type: 'p',
-      children: ['My goal has become to have something as simple as that.'],
+      children: 'My goal has become to have something as simple as that.',
     },
     {
       type: 'p',
-      children: ['Since a lot of our front-end code is written in Django, this was the first place I turned to. Fortunately, adding a template tag is quite easy - this is the end result:'],
+      children: 'Since a lot of our front-end code is written in Django, this was the first place I turned to. Fortunately, adding a template tag is quite easy - this is the end result:',
     },
     {
       type: 'pre',
@@ -91,7 +91,7 @@ module.exports = {
     },
     {
       type: 'p',
-      children: ['The template tag itself is only a few short lines of code, with some basic attribute handling!'],
+      children: 'The template tag itself is only a few short lines of code, with some basic attribute handling!',
     },
     {
       type: 'p',
@@ -102,14 +102,14 @@ module.exports = {
           props: {
             href: 'https://facebook.github.io/react/',
           },
-          children: ['React'],
+          children: 'React',
         },
         ', so it only made sense to have an appropriate component there. That component would only render the icon that was needed, so including all of the icons in a sprite form was out of question. And so as the React components are rendered on the client side, I needed to have a way of including the SVG icons in the script bundle.',
       ],
     },
     {
       type: 'h3',
-      children: ['The search for an existing tool'],
+      children: 'The search for an existing tool',
     },
     {
       type: 'p',
@@ -120,7 +120,7 @@ module.exports = {
           props: {
             href: 'https://www.npmjs.com/package/react-svg-loader',
           },
-          children: ['react-svg-loader'],
+          children: 'react-svg-loader',
         },
         '. However, after giving it some thought, I decided not to use the loaders for a couple of reasons:',
       ],
@@ -130,7 +130,7 @@ module.exports = {
       children: [
         {
           type: 'li',
-          children: ['They are import-driven. What I wanted instead of having one import per icon was to have the one icon component to rule them all.'],
+          children: 'They are import-driven. What I wanted instead of having one import per icon was to have the one icon component to rule them all.',
         },
         {
           type: 'li',
@@ -141,19 +141,15 @@ module.exports = {
               props: {
                 href: 'https://github.com/zeit/next.js/',
               },
-              children: ['Next.js'],
+              children: 'Next.js',
             },
             ' that does not support Webpack loaders completely:',
             {
               type: 'blockquote',
-              children: [
-                {
-                  type: 'p',
-                  children: [
-                    'Warning: Adding loaders to support new file types (css, less, svg, etc.) is not recommended because only the client code gets bundled via webpack and thus it won\'t work on the initial server rendering.',
-                  ],
-                },
-              ],
+              children: {
+                type: 'p',
+                children: 'Warning: Adding loaders to support new file types (css, less, svg, etc.) is not recommended because only the client code gets bundled via webpack and thus it won\'t work on the initial server rendering.',
+              },
             },
           ],
         },
@@ -166,7 +162,7 @@ module.exports = {
               props: {
                 href: 'https://webpack.js.org/',
               },
-              children: ['Webpack'],
+              children: 'Webpack',
             },
             ', this approach would require another plugin for e.g. ',
             {
@@ -174,7 +170,7 @@ module.exports = {
               props: {
                 href: 'https://github.com/rollup/rollup',
               },
-              children: ['Rollup'],
+              children: 'Rollup',
             },
             '. We\'re not really planning on using Rollup (it\'s just not the right use case), but I wanted to have a more universal tool that I could later use in other projects.',
           ],
@@ -190,14 +186,14 @@ module.exports = {
           props: {
             href: 'https://www.npmjs.com/package/babel-plugin-inline-react-svg',
           },
-          children: ['babel-plugin-inline-react-svg'],
+          children: 'babel-plugin-inline-react-svg',
         },
         '. While this coveres Next.js, is universal (at least as universal as Babel is), and optimizes images on the fly, it is also import-driven - so I ruled it out. In the end I couldn\'t find a plugin that I would be ok with, so I set out to create one.',
       ],
     },
     {
       type: 'h3',
-      children: ['Well, there it is'],
+      children: 'Well, there it is',
     },
     {
       type: 'p',
@@ -208,7 +204,7 @@ module.exports = {
           props: {
             href: 'https://github.com/fatfisz/babel-plugin-jsx-svg-inject',
           },
-          children: ['the implementation'],
+          children: 'the implementation',
         },
         ', but I\'ve created a ',
         {
@@ -216,7 +212,7 @@ module.exports = {
           props: {
             href: 'https://www.npmjs.com/package/babel-plugin-jsx-svg-inject',
           },
-          children: ['plugin'],
+          children: 'plugin',
         },
         ' that allows me to do just what I wanted:',
       ],
@@ -242,7 +238,7 @@ module.exports = {
     },
     {
       type: 'p',
-      children: ['into this:'],
+      children: 'into this:',
     },
     {
       type: 'pre',
@@ -268,14 +264,14 @@ module.exports = {
           props: {
             href: 'https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md',
           },
-          children: ['recommended guide'],
+          children: 'recommended guide',
         },
         ' is quite extensive and additionally covers some trip-up scenarios.',
       ],
     },
     {
       type: 'p',
-      children: ['For now the plugin is used on this very page and in some places on the Codility website. I hope you find it useful too! If you try it out, you\'re most welcome to share some feedback about it.'],
+      children: 'For now the plugin is used on this very page and in some places on the Codility website. I hope you find it useful too! If you try it out, you\'re most welcome to share some feedback about it.',
     },
   ],
 };

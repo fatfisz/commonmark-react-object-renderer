@@ -5,11 +5,11 @@ module.exports = {
   children: [
     {
       type: 'h1',
-      children: ['This is a header'],
+      children: 'This is a header',
     },
     {
       type: 'p',
-      children: ['And this is a paragraph'],
+      children: 'And this is a paragraph',
     },
   ],
 };

@@ -43,6 +43,20 @@ export default class ReactObjectRenderer {
     }
   }
 
+  normalizeChildren() {
+    if (this.element.children) {
+      switch (this.element.children.length) {
+        case 0:
+          delete this.element.children;
+          break;
+
+        case 1:
+          this.element.children = this.element.children[0];
+          break;
+      }
+    }
+  }
+
   currentNodeToElement(element = {}) {
     const { node } = this;
     const renderer = this.options.renderers && this.options.renderers[node.type] || defaultRenderer;
@@ -69,6 +83,7 @@ export default class ReactObjectRenderer {
       }
 
       if (!event.entering) {
+        this.normalizeChildren();
         this.stack.pop();
         continue;
       }
