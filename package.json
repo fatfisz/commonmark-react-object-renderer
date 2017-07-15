@@ -1,0 +1,42 @@
+{
+  "name": "commonmark-react-object-renderer",
+  "description": "Renderer for CommonMark which returns a React description object",
+  "keywords": [
+    "commonmark",
+    "json",
+    "object",
+    "react",
+    "renderer"
+  ],
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/fatfisz/commonmark-react-object-renderer",
+  "repository": "https://github.com/fatfisz/commonmark-react-object-renderer.git",
+  "author": {
+    "name": "FatFisz",
+    "url": "https://github.com/fatfisz"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublish": "yarn build",
+    "pretest": "yarn build",
+    "test": "mocha --compilers js:babel-register"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "commonmark": "^0.27.0",
+    "mocha": "^3.4.2",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1"
+  }
+}
